@@ -1,0 +1,29 @@
+ body{
+    display: grid;
+    place-items: center;
+    }
+
+.btn{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 10px 30px;
+    background-image: linear-gradient(120deg, #3a61fe, #d43afe);
+    border-radius: 100px;
+    animation: gradient 10s linear infinite;
+    position: relative;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+
+@keyframes gradient{
+    from{
+        filter:hue-rotate(0deg);
+    }
+
+    to{
+        filter:hue-rotate(360deg);
+    }
+}

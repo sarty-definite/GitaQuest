@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript"
+            src="api.js">
+    </script>
+    <link rel="stylesheet" href="after_pages.css">
+    <title>Lord Krishna on Pride</title>
+</head>
+<body>
+<div >
+    <p id="text"></p>
+    <h1><u>Transliteration</u></h1>
+    <p id="transliteration"></p>
+    <h1><u>Word Meaning</u></h1>
+    <p id="word_meanings"></p>
+    <h1><u>Translation</u></h1>
+    <p id="translations"></p>
+</div>
+<script>
+    getText();
+
+    async function getText() {
+        const verses = ["16 4", "16 13", "16 15", "18 26", "18 58"];
+        const random = Math.floor(Math.random() * verses.length);
+        const myArray = verses[random].split(" ");
+        const link = "https://bhagavad-gita3.p.rapidapi.com/v2/chapters/" + myArray[0] + /verses/ + myArray[1] + "/";
+
+        let x = await fetch(link, api_content);
+        const a = await x.text();
+        const obj = JSON.parse(a);
+        document.getElementById("text").innerHTML = obj["text"]
+        document.getElementById("transliteration").innerHTML = obj["transliteration"]
+        document.getElementById("word_meanings").innerHTML = obj["word_meanings"]
+        document.getElementById("translations").innerHTML = obj["translations"][0]["description"]
+    }
+</script>
+
+</body>
+</html>
+
+
+

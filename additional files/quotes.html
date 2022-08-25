@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>marquee quotes</title>
+    <meta charset="UTF-8">
+    <style>
+        .marquee {
+            text-align: center;
+
+        }
+
+        .marquee p {
+            color: white;
+            font-family: sans-serif;
+            font-size: 25px;
+            text-shadow: 2px 2px 20px black;
+
+            padding-top: 100%;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(0, -100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="marquee">
+    <p id="demo"></p>
+</div>
+
+
+<script>
+
+    let numArray = ["A.C Bhakti Vedanta Swami Prabhupada: <br><br> The purpose of Bhagavad-gita is to deliver mankind from the nescience of material existence. Every man is in difficulty in so many ways, as Arjuna also was in difficulty in having to fight the Battle of Kuruksetra. Arjuna surrendered unto Sri Krsna, and consequently this Bhagavad-gita was spoken. Not only Arjuna, but every one of us is full of anxieties because of this material existence.",
+        "Albert Einstein (The most famous scientist of our times) - <br><br> When I read the Bhagavad-Gita and reflect about how God created this universe everything else seems so superfluous. • I have made the Bhagwad-Gita as the main source of my inspiration and guide for the purpose of scientific investigations and formation of my theories",
+        "Mahatma Gandhi: <br><br>When doubts haunt me, when disappointments stare me in the face, and I see not one ray of hope on the horizon, I turn to Bhagavad-Gita and find a verse to comfort me; and I immediately begin to smile in the midst of overwhelming sorrow. Those who meditate on the Gita will derive fresh joy and new meanings from it every day"];
+
+    function myFunction() {
+        const a = Math.floor(Math.random() * 3);
+        document.getElementById("demo").innerHTML = numArray[a];
+    }
+
+    myFunction();
+
+    setInterval(function () {
+        myFunction()
+    }, 30000)
+
+</script>
+
+</body>
+</html>

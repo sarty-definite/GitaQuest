@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+    color: white;
+    font-family: Verdana, sans-serif;
+}
+
+p {
+    text-align: center;
+    color: aliceblue;
+    font-size: 30px;
+}
+
+body {
+    background-image: url("bg.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div {
+    width: 1000px;
+    padding: 150px;
+    margin: auto;
+}
